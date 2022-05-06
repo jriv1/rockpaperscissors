@@ -1,6 +1,4 @@
 
-
-const buttons = document.querySelectorAll(".btn");
 const rock = document.querySelector(".btn-rock");
 const paper = document.querySelector(".btn-paper");
 const scissors = document.querySelector(".btn-scissors");
@@ -26,8 +24,7 @@ function computerPlay(){
     }
     else{
         return("ERROR");
-    }
-    
+    }  
 }
  
 function play(computerSelection,playerSelection){
@@ -58,8 +55,7 @@ function play(computerSelection,playerSelection){
     function winGame(){
         pScore += 1;
         playerScore.textContent = pScore;
-        computerScore.textContent = cScore;
-     
+        computerScore.textContent = cScore;   
     }
 
     function loseGame(){
@@ -98,14 +94,4 @@ function play(computerSelection,playerSelection){
             
             scissors.addEventListener("click",function(){
                play(computerPlay(),"SCISSORS");
-            });
-
-
-
-
-
-
-
-
-
-   
+            }); 
