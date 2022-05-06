@@ -1,3 +1,6 @@
+
+
+const buttons = document.querySelectorAll(".btn");
 const rock = document.querySelector(".btn-rock");
 const paper = document.querySelector(".btn-paper");
 const scissors = document.querySelector(".btn-scissors");
@@ -35,56 +38,72 @@ function play(computerSelection,playerSelection){
         if(computerSelection === playerSelection){
            result.textContent = "Draw";
         }
-        else if(computerSelection === "ROCK" && playerSelection === "PAPER")       {    
-           result.textContent = "You win!!!";
-           pScore += 1;
-           
+        else if(computerSelection === "ROCK" && playerSelection === "PAPER" ||
+        computerSelection === "PAPER"&& playerSelection === "SCISSORS" ||
+        computerSelection === "SCISSORS" && playerSelection === "ROCK" )       {    
+           result.textContent = "You win!!!"; 
+           winGame();   
+           checkWinner(pScore,cScore);            
         }
-        else if( computerSelection === "ROCK" && playerSelection === "SCISSORS"){     
-           result.textContent = "You lose!!!"
-           cScore += 1;
-          
-        }
-        else if(computerSelection === "PAPER"&& playerSelection === "SCISSORS")    {          
-           result.textContent = "You win!!!";
-           pScore +=1;
-          
-        }     
-        else if( computerSelection === "PAPER"&& playerSelection === "ROCK"){
-           
-           result.textContent = "You lose!!!"
-           cScore +=1;
-        }
-        else if(computerSelection === "SCISSORS" && playerSelection === "ROCK")      {
-           
-           result.textContent = "You win!!!";
-           pScore +=1;
-        }
-        else if( computerSelection === "SCISSORS" && playerSelection === "PAPER"){
-             
-           result.textContent = "You lose!!!";
-           cScore += 1;
-        }
-        else{
-           result.textContent = "Err"
-        }   
+        else if( computerSelection === "ROCK" && playerSelection === "SCISSORS" ||
+        computerSelection === "PAPER"&& playerSelection === "ROCK" ||
+        computerSelection === "SCISSORS" && playerSelection === "PAPER" )
+        {     
+           result.textContent = "You lose!!!" 
+           loseGame();
+           checkWinner(pScore,cScore);
+        }  
         console.log(pScore,cScore);
+    }
+    function winGame(){
+        pScore += 1;
         playerScore.textContent = pScore;
         computerScore.textContent = cScore;
+     
     }
 
+    function loseGame(){
+        cScore += 1;
+        playerScore.textContent = pScore;
+        computerScore.textContent = cScore;
+        
+    }
+    function checkWinner(pScore,cScore){
+        if(pScore === 5){
+           resetScore();
+            result.textContent = "You won Game over";
+
+        }
+        else if(cScore === 5){
+            resetScore();
+            result.textContent = "You lost against a computer";
+        }
+    }
+    function resetScore(){
+      
+        pScore = 0;
+        cScore = 0;
+    }
+  
+
+            rock.addEventListener("click",function(){
+            play(computerPlay(),"ROCK");
+            });
+             
+            paper.addEventListener("click",function(){
+                play(computerPlay(),"PAPER");
+             });
+            
+            scissors.addEventListener("click",function(){
+               play(computerPlay(),"SCISSORS");
+            });
 
 
-    rock.addEventListener("click",function(){
-   play(computerPlay(),"ROCK");
-  });
-     
-    paper.addEventListener("click",function(){
-        play(computerPlay(),"PAPER");
-     });
- 
-    scissors.addEventListener("click",function(){
-       play(computerPlay(),"SCISSORS");
-    });
+
+
+
+
+
+
 
    
