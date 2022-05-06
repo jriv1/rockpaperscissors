@@ -71,18 +71,20 @@ function play(computerSelection,playerSelection){
     function checkWinner(pScore,cScore){
         if(pScore === 5){
            resetScore();
-            result.textContent = "You won Game over";
+            result.textContent = "You won Game over, Restarting";
 
         }
         else if(cScore === 5){
             resetScore();
-            result.textContent = "You lost against a computer";
+            result.textContent = "You lost against a computer, Restarting";
         }
     }
     function resetScore(){
-      
         pScore = 0;
         cScore = 0;
+        playerScore.textContent = 0;
+        computerScore.textContent = 0;
+
     }
   
 
