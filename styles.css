@@ -1,0 +1,28 @@
+body{
+    background-color: beige;
+    text-align: center;
+  
+}
+.header{
+    text-align: center;
+    margin-top:50px ;
+    margin-bottom: 100px;
+}
+
+.btn{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.player{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+
+}
+.game{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
