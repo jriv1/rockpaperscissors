@@ -86,7 +86,7 @@ function play(computerSelection,playerSelection){
 
             rock.addEventListener("click",function(){
             play(computerPlay(),"ROCK");
-            playerChoice.textContent = rock;
+            rock.set
             });
              
             paper.addEventListener("click",function(){
