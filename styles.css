@@ -4,8 +4,8 @@ body{
   
 }
 img{
-    width: 400px;
-    height: 200px;
+    width: 200px;
+    height: 120px;
     object-fit: contain;
 }
 .btn{
@@ -34,7 +34,7 @@ img{
 .game{
     display: flex;
     align-items: center;
-justify-content: center;
-gap: 100px;
-    margin-top: 10px;
+    justify-content: center;
+     gap: 100px;
+    margin-bottom: 20px;
 }

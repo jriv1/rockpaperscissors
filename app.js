@@ -29,8 +29,8 @@ function computerPlay(){
  
 function play(computerSelection,playerSelection){
       
-        playerChoice.textContent = playerSelection;
-        computerChoice.textContent = computerSelection;
+        // playerChoice.textContent = playerSelection;
+        // computerChoice.textContent = computerSelection;
     
         if(computerSelection === playerSelection){
            result.textContent = "Draw";
@@ -86,6 +86,7 @@ function play(computerSelection,playerSelection){
 
             rock.addEventListener("click",function(){
             play(computerPlay(),"ROCK");
+            playerChoice.textContent = rock;
             });
              
             paper.addEventListener("click",function(){
