@@ -29,15 +29,16 @@ function computerPlay(){
  
 function play(computerSelection,playerSelection){
       
-        // playerChoice.textContent = playerSelection;
-        // computerChoice.textContent = computerSelection;
+         playerChoice.textContent = playerSelection;
+         computerChoice.textContent = computerSelection;
     
         if(computerSelection === playerSelection){
            result.textContent = "Draw";
         }
         else if(computerSelection === "ROCK" && playerSelection === "PAPER" ||
         computerSelection === "PAPER"&& playerSelection === "SCISSORS" ||
-        computerSelection === "SCISSORS" && playerSelection === "ROCK" )       {    
+        computerSelection === "SCISSORS" && playerSelection === "ROCK" )     { 
+            
            result.textContent = "You win!!!"; 
            winGame();   
            checkWinner(pScore,cScore);            
@@ -67,7 +68,7 @@ function play(computerSelection,playerSelection){
     function checkWinner(pScore,cScore){
         if(pScore === 5){
            resetScore();
-            result.textContent = "You won Game over, Restarting";
+            result.textContent = "You won, Restarting";
 
         }
         else if(cScore === 5){
@@ -86,7 +87,7 @@ function play(computerSelection,playerSelection){
 
             rock.addEventListener("click",function(){
             play(computerPlay(),"ROCK");
-            rock.set
+            
             });
              
             paper.addEventListener("click",function(){
